@@ -5,6 +5,10 @@ Web-based accounting system prototype untuk studi kasus UMKM makanan keluarga di
 > **Status:** In Development  
 > Data yang digunakan merupakan data simulasi untuk pembelajaran dan portofolio, bukan pembukuan resmi usaha.
 
+## Live Preview
+
+Demo statis tersedia melalui GitHub Pages. Demo memakai data contoh dan menyimpan perubahan hanya selama halaman masih dibuka. Penyimpanan Cloudflare D1 dan ekspor server tersedia pada versi backend.
+
 ## Tujuan Proyek
 
 Proyek ini dibuat untuk mempraktikkan siklus akuntansi UMKM sekaligus memahami hubungan antara antarmuka aplikasi, business logic, API, dan database dalam penyusunan laporan keuangan.
