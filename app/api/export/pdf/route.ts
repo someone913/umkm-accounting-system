@@ -40,8 +40,6 @@ function buildPdf(businessName: string, sections: PdfSection[]) {
 }
 
 export async function POST(request: Request) {
-  const userId = request.headers.get("oai-authenticated-user-id");
-  if (!userId) return Response.json({ error: "Sesi pengguna tidak ditemukan." }, { status: 401 });
   const payload = (await request.json()) as { businessName?: string; sections?: PdfSection[]; filename?: string };
   if (!payload.sections?.length) return Response.json({ error: "Tidak ada laporan untuk diekspor." }, { status: 400 });
   const bytes = buildPdf(payload.businessName || "UMKM Makanan Keluarga", payload.sections);

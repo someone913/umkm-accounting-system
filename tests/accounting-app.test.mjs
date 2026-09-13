@@ -6,7 +6,7 @@ test("uses cloud persistence and exposes the requested controls", async () => {
   const [app, page, manifest] = await Promise.all([
     readFile(new URL("../public/app.js", import.meta.url), "utf8"),
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
-    readFile(new URL("../.openai/hosting.json", import.meta.url), "utf8"),
+    readFile(new URL("../config/hosting.json", import.meta.url), "utf8"),
   ]);
   assert.match(app, /fetch\("\/api\/state"/);
   assert.doesNotMatch(app, /localStorage\.setItem/);

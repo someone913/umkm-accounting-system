@@ -74,7 +74,7 @@ Cloudflare D1 digunakan sebagai database SQL berbasis SQLite. Pada versi prototy
 
 | Kolom | Fungsi |
 | --- | --- |
-| `user_id` | Identitas pengguna dan primary key |
+| `user_id` | Identitas sesi browser dan primary key |
 | `state_json` | Data profil usaha, periode, transaksi, barang, dan penyesuaian |
 | `updated_at` | Waktu pembaruan terakhir |
 
@@ -109,7 +109,7 @@ npm install
 npm run dev
 ```
 
-Database lokal dijalankan melalui binding D1/Miniflare. Identitas pengguna pada versi yang di-host diberikan oleh lapisan autentikasi platform, sehingga konfigurasi autentikasi perlu disesuaikan jika proyek dipasang pada akun Cloudflare lain.
+Database lokal dijalankan melalui binding D1/Miniflare. Versi prototype memakai cookie sesi anonim agar data pada satu browser tidak bercampur dengan browser lain. Sistem login dan otorisasi pengguna belum menjadi bagian dari scope proyek.
 
 ## Catatan Pengembangan
 

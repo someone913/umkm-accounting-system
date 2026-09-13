@@ -26,8 +26,6 @@ function sheetXml(sheet: Sheet) {
 }
 
 export async function POST(request: Request) {
-  const userId = request.headers.get("oai-authenticated-user-id");
-  if (!userId) return Response.json({ error: "Sesi pengguna tidak ditemukan." }, { status: 401 });
   const payload = (await request.json()) as { sheets?: Sheet[]; filename?: string };
   const sheets = (payload.sheets ?? []).slice(0, 12).filter((sheet) => Array.isArray(sheet.rows));
   if (!sheets.length) return Response.json({ error: "Tidak ada data untuk diekspor." }, { status: 400 });
